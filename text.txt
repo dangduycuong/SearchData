@@ -1,0 +1,4 @@
+Thứ 6, Ngày 11-01-2019
+Mục tiêu:
+	- Biết dùng search tạo bằng code và searchBar
+Start at 15h30
