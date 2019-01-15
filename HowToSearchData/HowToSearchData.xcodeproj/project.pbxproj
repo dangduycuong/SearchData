@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE0D510521EDB68700FBE8AC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D510421EDB68700FBE8AC /* TableViewCell.swift */; };
+		CE0D510721EDC70100FBE8AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0D510621EDC70100FBE8AC /* DetailViewController.swift */; };
 		CE1EA56721E88DC5006690BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA56621E88DC5006690BD /* AppDelegate.swift */; };
 		CE1EA56C21E88DC5006690BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA56A21E88DC5006690BD /* Main.storyboard */; };
 		CE1EA56E21E88DC5006690BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA56D21E88DC5006690BD /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		CE0D510421EDB68700FBE8AC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CE0D510621EDC70100FBE8AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CE1EA56321E88DC5006690BD /* HowToSearchData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowToSearchData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1EA56621E88DC5006690BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE1EA56B21E88DC5006690BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,8 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				CE1EA56621E88DC5006690BD /* AppDelegate.swift */,
-				CE25CB2E21ED88FB007E8506 /* MasterTableViewController.swift */,
 				CE0D510421EDB68700FBE8AC /* TableViewCell.swift */,
+				CE25CB2E21ED88FB007E8506 /* MasterTableViewController.swift */,
+				CE0D510621EDC70100FBE8AC /* DetailViewController.swift */,
 				CE1EA56A21E88DC5006690BD /* Main.storyboard */,
 				CE1EA56D21E88DC5006690BD /* Assets.xcassets */,
 				CE1EA56F21E88DC5006690BD /* LaunchScreen.storyboard */,
@@ -203,6 +206,7 @@
 				CE0D510521EDB68700FBE8AC /* TableViewCell.swift in Sources */,
 				CE1EA56721E88DC5006690BD /* AppDelegate.swift in Sources */,
 				CE25CB2F21ED88FB007E8506 /* MasterTableViewController.swift in Sources */,
+				CE0D510721EDC70100FBE8AC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,10 @@ struct Laptop {
 class MasterTableViewController: UITableViewController {
     
     //MARK: Properties
-    // @IBOutlet weak var nameImageView: UIImageView!
     
     var laptops = [
         Laptop(catogery: "APPLE", name: "Apple Macbook 12", imageView: UIImage(named: "Apple Macbook 12")),
-        Laptop(catogery: "APPLE", name: "Macbook Air 13.jpg", imageView: UIImage(named: "Macbook Air 13.jpg")),
+        Laptop(catogery: "APPLE", name: "Macbook Air 13", imageView: UIImage(named: "Macbook Air 13")),
         Laptop(catogery: "APPLE", name: "MacBook Pro 13 Retina", imageView: UIImage(named: "MacBook Pro 13 Retina")),
         Laptop(catogery: "ASUS", name: "ASUS Transformer Book", imageView: UIImage(named: "ASUS Transformer Book")),
         Laptop(catogery: "ASUS", name: "Asus Vivobook", imageView: UIImage(named: "Asus Vivobook")),
@@ -54,6 +53,21 @@ class MasterTableViewController: UITableViewController {
         searchController.searchBar.scopeButtonTitles = ["ALL", "APPLE", "ASUS", "DELL", "OTHER"]
     }
     
+    //MARK: Action
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? DetailViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            var laptop: Laptop
+            laptop = laptops[indexPath.row]
+            destination?.detailCatogeryText = laptop.catogery
+            destination?.detailNameText = laptop.name
+            destination?.detailImage = laptop.imageView
+        }
+        
+    }
+    
     //MARK: Setup action for Search
     func isSearchBarEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -77,7 +91,7 @@ class MasterTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    // MARK: - Table view data source
+    //MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -86,6 +100,7 @@ class MasterTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
+            // return về những kết qủa tìm được
             return filterLaptop.count
         } else {
             return laptops.count
@@ -107,8 +122,14 @@ class MasterTableViewController: UITableViewController {
         cell.catogeryLabel.text = laptop.catogery
         cell.catogeryLabel.textColor = UIColor.red
         cell.laptopLabel.text = laptop.name
+        cell.laptopLabel.textColor = UIColor.darkGray
         cell.nameImageView.image = UIImage(named: laptop.name)
-        cell.backgroundColor = #colorLiteral(red: 0.9351979421, green: 0.5281127244, blue: 0.9372549057, alpha: 0.7687885123)
+        
+        // Set color when user touch inside (or click choose)
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
+        indexPath.row % 2 == 0 ? (cell.backgroundColor = #colorLiteral(red: 0.8374283536, green: 0.8986742516, blue: 0.9008055376, alpha: 0.5139194542)) : (cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         
         return cell
     }
